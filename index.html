@@ -670,6 +670,53 @@ tbody tr:last-child td { border-bottom: none; }
     </div>
   </div>
 
+
+  <!-- SAM COMPOSITION: EXPERIENCE + ENGLISH FILTER -->
+  <div class="row c2" style="margin-bottom:14px">
+    <div class="card">
+      <div class="card-hdr"><h3>Experience Level — LinkedIn SAM (54 profiles)</h3></div>
+      <div class="card-body">
+        <div class="row c3 mb0" style="gap:10px">
+          <div style="background:var(--paper);border-radius:6px;padding:12px;border:1px solid var(--rule);text-align:center">
+            <div style="font-size:26px;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-.03em">54</div>
+            <div style="font-size:9.5px;font-weight:600;color:var(--ink3);margin-top:5px;line-height:1.4">Total SAM<br>10+ years exp.</div>
+          </div>
+          <div style="background:var(--paper);border-radius:6px;padding:12px;border:1px solid var(--rule);text-align:center">
+            <div style="font-size:26px;font-weight:800;color:var(--teal);line-height:1;letter-spacing:-.03em">38</div>
+            <div style="font-size:9.5px;font-weight:600;color:var(--ink3);margin-top:5px;line-height:1.4">10–19 years<br>experience</div>
+          </div>
+          <div style="background:var(--paper);border-radius:6px;padding:12px;border:1px solid var(--rule);text-align:center">
+            <div style="font-size:26px;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-.03em">16</div>
+            <div style="font-size:9.5px;font-weight:600;color:var(--ink3);margin-top:5px;line-height:1.4">20+ years<br>experience</div>
+          </div>
+        </div>
+        <div class="notice teal" style="margin-top:12px;margin-bottom:0">
+          <h4>Experience filter applied</h4>
+          SAM minimum threshold is 10+ years in submarine/subsea telecom. Profiles below 10 years were excluded regardless of title. 20+ year profiles carry highest technical depth but also highest tenure lock-in risk.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hdr"><h3>English Language Filter — Inclusion/Exclusion Logic</h3></div>
+      <div class="card-body">
+        <div class="row c2 mb0" style="gap:10px">
+          <div style="background:var(--teal-lt);border-radius:6px;padding:12px;border:1px solid rgba(10,107,90,.2);text-align:center">
+            <div style="font-size:26px;font-weight:800;color:var(--teal);line-height:1;letter-spacing:-.03em">54</div>
+            <div style="font-size:9.5px;font-weight:600;color:var(--teal);margin-top:5px;line-height:1.4">Included<br>English confirmed</div>
+          </div>
+          <div style="background:var(--red-lt);border-radius:6px;padding:12px;border:1px solid rgba(168,30,30,.18);text-align:center">
+            <div style="font-size:26px;font-weight:800;color:var(--red);line-height:1;letter-spacing:-.03em">52</div>
+            <div style="font-size:9.5px;font-weight:600;color:var(--red);margin-top:5px;line-height:1.4">Excluded<br>No English signal</div>
+          </div>
+        </div>
+        <div class="notice red" style="margin-top:12px;margin-bottom:0">
+          <h4>Why non-English speakers were excluded</h4>
+          This role requires business-level English for EMEA-wide operational leadership. Profiles with no English indicator in headline, summary, or experience were excluded from SAM. They remain in the TAM (312) and may be unlocked if the role scope changes.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ROW 3: JOB POSTING DEMAND + FUNNEL -->
   <div class="row c32">
     <div class="col">
@@ -1431,7 +1478,7 @@ function buildTurnover() {
     </div>`).join('') + `
     <div class="notice amber" style="margin-top:14px;margin-bottom:0">
       <h4>Source</h4>
-      Japan MHLW Labour Statistics ·Revelio, LinkedIn, Glassdoor, Payscale
+      Japan MHLW Labour Statistics · OpenWork · TI estimates. Directional. Validate with live data.
     </div>`;
   fills(el);
 }
