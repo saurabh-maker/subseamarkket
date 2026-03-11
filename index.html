@@ -520,7 +520,7 @@ tbody tr:last-child td { border-bottom: none; }
     <span class="hdr-title"><b>Japan Submarine Talent Intelligence Report</b> · Regional Operational Leader, EMEA Submarine · Req #JP-SUB-01</span>
   </div>
   <div class="hdr-right">
-    <span class="hpill hpill-live"><span class="live-pulse"></span>Live 2026</span>
+    <span class="hpill hpill-live"><span class="live-pulse"></span>Live 2025</span>
     <span class="hpill hpill-warn">SAM 54 LinkedIn · Extend Platforms</span>
   </div>
 </header>
@@ -705,8 +705,8 @@ tbody tr:last-child td { border-bottom: none; }
               <div style="font-size:9.5px;font-weight:600;color:var(--ink3);margin-top:4px;line-height:1.4">Times this role will<br>appear on job boards</div>
             </div>
           </div>
-          <div class="chart-box" style="height:155px"><canvas id="postChart"></canvas></div>
-          <div style="font-size:9px;color:var(--ink4);font-family:var(--mono);margin:6px 0 12px 2px">Source: Revelio,Jobboards,Private Groups(Li&fb) using boolean search — ("submarine cable" OR "subsea" OR "海底ケーブル") AND Japan · Q1 2022–Q4 2025 · Senior ops/delivery = Manager level and above only</div>
+          <div class="chart-box" style="height:155px"><canvas id="postChart" style="height:220px"></canvas></div>
+          <div style="font-size:9px;color:var(--ink4);font-family:var(--mono);margin:6px 0 12px 2px">Source: Revelo Labs · Weekly job postings data · Mar 2022–Mar 2026 · Active = live postings that week · New = first posted that week · Removed = taken down that week</div>
           <div class="notice amber" style="margin-top:0;margin-bottom:0">
             <h4>Japan job board reality</h4>
             Japanese professionals use <strong>local boards far more than LinkedIn</strong> — Doda, Green (IT/telecom), and Rikunabi Next are the primary platforms. Posting signals Ciena's market presence and may surface inbound interest. But senior submarine profiles are passive — <strong>active headhunting is still the primary method for this seniority level.</strong>
@@ -1104,22 +1104,26 @@ Chart.defaults.color = '#5B7083';
 const gc = '#E8ECF2';
 
 function buildCharts() {
-  // Job posting trend
+  // Job posting trend — weekly data from Revelo Labs
   new Chart(document.getElementById('postChart'), {
-    type: 'bar',
+    type: 'line',
     data: {
-      labels: ['Q1 22','Q2 22','Q3 22','Q4 22','Q1 23','Q2 23','Q3 23','Q4 23','Q1 24','Q2 24','Q3 24','Q4 24','Q1 25','Q2 25','Q3 25','Q4 25'],
+      labels: ["2022-03-27", "2022-04-03", "2022-04-10", "2022-04-17", "2022-04-24", "2022-05-01", "2022-05-08", "2022-05-15", "2022-05-22", "2022-05-29", "2022-06-05", "2022-06-12", "2022-06-19", "2022-06-26", "2022-07-03", "2022-07-10", "2022-07-17", "2022-07-24", "2022-07-31", "2022-08-07", "2022-08-14", "2022-08-21", "2022-08-28", "2022-09-04", "2022-09-11", "2022-09-18", "2022-09-25", "2022-10-02", "2022-10-09", "2022-10-16", "2022-10-23", "2022-10-30", "2022-11-06", "2022-11-13", "2022-11-20", "2022-11-27", "2022-12-04", "2022-12-11", "2022-12-18", "2022-12-25", "2023-01-01", "2023-01-08", "2023-01-15", "2023-01-22", "2023-01-29", "2023-02-05", "2023-02-12", "2023-02-19", "2023-02-26", "2023-03-05", "2023-03-12", "2023-03-19", "2023-03-26", "2023-04-02", "2023-04-09", "2023-04-16", "2023-04-23", "2023-04-30", "2023-05-07", "2023-05-14", "2023-05-21", "2023-05-28", "2023-06-04", "2023-06-11", "2023-06-18", "2023-06-25", "2023-07-02", "2023-07-09", "2023-07-16", "2023-07-23", "2023-07-30", "2023-08-06", "2023-08-13", "2023-08-20", "2023-08-27", "2023-09-03", "2023-09-10", "2023-09-17", "2023-09-24", "2023-10-01", "2023-10-08", "2023-10-15", "2023-10-22", "2023-10-29", "2023-11-05", "2023-11-12", "2023-11-19", "2023-11-26", "2023-12-03", "2023-12-10", "2023-12-17", "2023-12-24", "2023-12-31", "2024-01-07", "2024-01-14", "2024-01-21", "2024-01-28", "2024-02-04", "2024-02-11", "2024-02-18", "2024-02-25", "2024-03-03", "2024-03-10", "2024-03-17", "2024-03-24", "2024-03-31", "2024-04-07", "2024-04-14", "2024-04-21", "2024-04-28", "2024-05-05", "2024-05-12", "2024-05-19", "2024-05-26", "2024-06-02", "2024-06-09", "2024-06-16", "2024-06-23", "2024-06-30", "2024-07-07", "2024-07-14", "2024-07-21", "2024-07-28", "2024-08-04", "2024-08-11", "2024-08-18", "2024-08-25", "2024-09-01", "2024-09-08", "2024-09-15", "2024-09-22", "2024-09-29", "2024-10-06", "2024-10-13", "2024-10-20", "2024-10-27", "2024-11-03", "2024-11-10", "2024-11-17", "2024-11-24", "2024-12-01", "2024-12-08", "2024-12-15", "2024-12-22", "2024-12-29", "2025-01-05", "2025-01-12", "2025-01-19", "2025-01-26", "2025-02-02", "2025-02-09", "2025-02-16", "2025-02-23", "2025-03-02", "2025-03-09", "2025-03-16", "2025-03-23", "2025-03-30", "2025-04-06", "2025-04-13", "2025-04-20", "2025-04-27", "2025-05-04", "2025-05-11", "2025-05-18", "2025-05-25", "2025-06-01", "2025-06-08", "2025-06-15", "2025-06-22", "2025-06-29", "2025-07-06", "2025-07-13", "2025-07-20", "2025-07-27", "2025-08-03", "2025-08-10", "2025-08-17", "2025-08-24", "2025-08-31", "2025-09-07", "2025-09-14", "2025-09-21", "2025-09-28", "2025-10-05", "2025-10-12", "2025-10-19", "2025-10-26", "2025-11-02", "2025-11-09", "2025-11-16", "2025-11-23", "2025-11-30", "2025-12-07", "2025-12-14", "2025-12-21", "2025-12-28", "2026-01-04", "2026-01-11", "2026-01-18", "2026-01-25", "2026-02-01", "2026-02-08", "2026-02-15", "2026-02-22", "2026-03-01", "2026-03-08"],
       datasets: [
-        { label: 'All sub. JP (LinkedIn)', data: [3,4,3,3,4,5,4,5,6,7,7,8,8,9,9,10], backgroundColor: 'rgba(26,67,204,.18)', borderColor: '#1A43CC', borderWidth: 1.5, borderRadius: 4 },
-        { label: 'Senior ops/delivery', data: [1,1,0,1,1,1,1,2,2,2,3,3,3,3,4,4], backgroundColor: 'rgba(10,107,90,.2)', borderColor: '#0A6B5A', borderWidth: 1.5, borderRadius: 4 }
+        { label: 'Active postings', data: [10, 12, 15, 12, 9, 8, 8, 10, 14, 17, 15, 11, 17, 18, 18, 17, 19, 19, 18, 20, 21, 18, 19, 18, 21, 21, 18, 16, 13, 15, 18, 18, 19, 19, 17, 22, 23, 18, 16, 22, 21, 17, 16, 19, 19, 23, 24, 21, 23, 25, 23, 24, 25, 26, 28, 29, 27, 26, 25, 27, 27, 24, 28, 28, 24, 26, 24, 24, 19, 20, 24, 22, 23, 20, 24, 22, 27, 23, 24, 24, 22, 19, 17, 19, 22, 21, 20, 24, 23, 22, 21, 19, 18, 15, 15, 15, 13, 14, 13, 11, 12, 9, 9, 8, 9, 12, 11, 8, 9, 9, 9, 9, 9, 10, 13, 16, 20, 19, 19, 18, 19, 18, 17, 19, 16, 18, 16, 16, 18, 20, 22, 21, 21, 17, 14, 13, 14, 18, 17, 17, 17, 15, 12, 10, 10, 10, 8, 10, 10, 10, 11, 10, 12, 11, 10, 12, 14, 15, 20, 20, 22, 19, 18, 18, 19, 20, 22, 20, 18, 19, 19, 17, 15, 14, 14, 14, 14, 16, 15, 15, 15, 16, 15, 17, 16, 15, 14, 13, 16, 17, 18, 17, 16, 15, 16, 16, 17, 18, 17, 16, 20, 21, 21, 18, 17, 16, 16], borderColor: '#1A43CC', backgroundColor: 'rgba(26,67,204,.10)', borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, fill: true, tension: 0.3 },
+        { label: 'New postings', data: [3, 3, 4, 0, 1, 4, 0, 3, 8, 5, 1, 3, 8, 2, 5, 5, 3, 2, 2, 5, 2, 2, 1, 4, 4, 3, 0, 2, 2, 2, 6, 4, 3, 3, 2, 5, 5, 2, 3, 7, 3, 4, 3, 7, 5, 6, 3, 1, 4, 3, 2, 3, 3, 5, 2, 3, 2, 2, 1, 3, 0, 1, 7, 3, 1, 6, 4, 7, 1, 2, 7, 2, 6, 4, 9, 4, 8, 3, 2, 6, 4, 6, 5, 6, 3, 2, 0, 6, 3, 1, 2, 1, 1, 3, 3, 5, 2, 5, 3, 0, 4, 2, 2, 1, 3, 5, 4, 2, 2, 2, 1, 2, 4, 2, 7, 5, 6, 3, 1, 3, 4, 2, 0, 2, 0, 3, 3, 3, 4, 2, 3, 1, 1, 0, 0, 0, 2, 5, 0, 2, 1, 0, 3, 0, 1, 0, 0, 4, 0, 0, 1, 2, 3, 1, 0, 2, 2, 2, 5, 1, 4, 1, 2, 2, 3, 2, 4, 1, 3, 3, 1, 2, 1, 1, 0, 1, 3, 2, 3, 2, 2, 2, 1, 2, 3, 0, 2, 2, 3, 3, 1, 1, 2, 1, 2, 2, 2, 3, 2, 1, 4, 3, 3, 3, 1, 3, 1], borderColor: '#0A6B5A', backgroundColor: 'rgba(10,107,90,.08)', borderWidth: 1.5, pointRadius: 0, pointHoverRadius: 4, fill: true, tension: 0.3 },
+        { label: 'Removed postings', data: [4, 1, 1, 3, 4, 5, 0, 1, 4, 2, 3, 7, 2, 1, 5, 6, 1, 2, 3, 3, 1, 5, 0, 5, 1, 3, 3, 4, 5, 0, 3, 4, 2, 3, 4, 0, 4, 7, 5, 1, 4, 8, 4, 4, 5, 2, 2, 4, 2, 1, 4, 2, 2, 4, 0, 2, 4, 3, 2, 1, 0, 4, 3, 3, 5, 4, 6, 7, 6, 1, 3, 4, 5, 7, 5, 6, 3, 7, 1, 6, 6, 9, 7, 4, 0, 3, 1, 2, 4, 2, 3, 3, 2, 6, 3, 5, 4, 4, 4, 2, 3, 5, 2, 2, 2, 2, 5, 5, 1, 2, 1, 2, 4, 1, 4, 2, 2, 4, 1, 4, 3, 3, 1, 0, 3, 1, 5, 3, 2, 0, 1, 2, 1, 4, 3, 1, 1, 1, 1, 2, 1, 2, 6, 2, 1, 0, 2, 2, 0, 0, 0, 3, 1, 2, 1, 0, 0, 1, 0, 1, 2, 4, 3, 2, 2, 1, 2, 3, 5, 2, 1, 4, 3, 2, 0, 1, 3, 0, 4, 2, 2, 1, 2, 0, 4, 1, 3, 3, 0, 2, 0, 2, 3, 2, 1, 2, 1, 2, 3, 2, 0, 2, 3, 6, 2, 4, 1], borderColor: '#B05E00', backgroundColor: 'rgba(176,94,0,.07)', borderWidth: 1.5, pointRadius: 0, pointHoverRadius: 4, fill: true, tension: 0.3 }
       ]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'top', labels: { boxWidth: 9, font: { size: 10 } } } },
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 9, font: { size: 10 } } },
+        tooltip: { mode: 'index', intersect: false }
+      },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 9 } } },
-        y: { grid: { color: gc }, ticks: { font: { size: 9 } }, title: { display: true, text: 'Est. postings', font: { size: 9 } } }
+        x: { grid: { display: false }, ticks: { font: { size: 8 }, maxTicksLimit: 24, maxRotation: 45 } },
+        y: { grid: { color: gc }, ticks: { font: { size: 9 } }, title: { display: true, text: 'Postings (weekly)', font: { size: 9 } } }
       }
     }
   });
@@ -1427,7 +1431,7 @@ function buildTurnover() {
     </div>`).join('') + `
     <div class="notice amber" style="margin-top:14px;margin-bottom:0">
       <h4>Source</h4>
-      Japan MHLW Labour Statistics · LinkedIn
+      Japan MHLW Labour Statistics · OpenWork · TI estimates. Directional. Validate with live data.
     </div>`;
   fills(el);
 }
@@ -1441,7 +1445,7 @@ const PROFS = [
     l:'Tokyo, Japan',
     m:'Very High',
     av:'HX', avc:'#0A6B5A',
-    url:'https://www.linkedin.com/in/hai-xiao-ph-d-937b45111/?jobid=1234',
+    url:'https://www.linkedin.com/in/hai-xiao-phd-937b45111',
     tags:['Ph.D.','21 yrs NEC','14+ systems delivered','80,000+ km','Technical Director'],
     why:'<strong>21 consecutive years at NEC Submarine Network Division — one of the longest-tenured senior technical profiles in this search.</strong> Has personally designed, integrated, and delivered 14+ submarine optical cable systems covering 80,000+ km. Currently Team Lead Manager, previously held Director title (2021–22). This is the deepest technical systems expertise in the dataset. <strong>Important caveat for sourcing:</strong> very long NEC tenure (21 years) means strong cultural attachment and likely IP/NDA considerations — approach via warm referral only, not cold outreach.'
   },
@@ -1452,7 +1456,7 @@ const PROFS = [
     l:'Tokyo, Japan',
     m:'Very High',
     av:'TN', avc:'#0D1B2A',
-    url:'https://www.linkedin.com/in/tomohito-nozoe-1b78251b3/?jobid=1234',
+    url:'https://www.linkedin.com/in/tomohitonozoe-1b78251b3',
     tags:['14 yrs NEC','Sub. Cable PM','Cross-border','Indonesia PM','DWDM/SLTE'],
     why:'<strong>14 years at NEC with direct submarine cable project management experience across Asia-Pacific.</strong> Spent 3+ years as on-the-ground PM in Indonesia (PT. NEC Indonesia) leading submarine cable projects — rare multi-country ops and regulatory execution track record. Also managed permitting/regulatory approvals across governments. Recently promoted to Manager in Project Management Group (Oct 2025). Bilingual (JP/EN). Strong fit for the multi-country operational delivery dimension of this role. <strong>Engage via warm intro — LinkedIn profile is relatively low-activity.</strong>'
   },
@@ -1463,7 +1467,7 @@ const PROFS = [
     l:'Kawasaki, Kanagawa, Japan',
     m:'Very High',
     av:'NI', avc:'#1A43CC',
-    url:'https://www.linkedin.com/in/naoto-inoue-b5b710386/',
+    url:'https://www.linkedin.com/in/naoto-inoueb5b710386',
     tags:['PMP Certified','12+ yrs sub.','Route Engineering','APAC Permits','Hyperscaler Exp.'],
     why:'<strong>12+ years of continuous submarine cable experience spanning engineering, operations, and multi-stakeholder program management.</strong> PMP certified. Specialises in route engineering (MakaiPlan), APAC regulatory permitting, and Marine Working Group coordination — exactly the kind of cross-functional ops-to-commercial bridge this role needs. Has presented technical briefings to Japanese government ministries. TOEIC 900 — strong English confirmed. Currently at NESIC (NEC subsidiary), making him slightly more accessible than core NEC employees. <strong>This is a strong first-call candidate.</strong>'
   },
@@ -1474,7 +1478,7 @@ const PROFS = [
     l:'Saitama, Japan',
     m:'High',
     av:'HK', avc:'#5535b3',
-    url:'https://www.linkedin.com/in/kishifc/?jobid=1234',
+    url:'https://www.linkedin.com/in/kishifc',
     tags:['Senior Manager','28 yrs telecom','Sub. Cable Ops','Global NOC','Automation/AI'],
     why:'<strong>28+ year career in international telecom, with the last 5 years as Senior Manager overseeing SoftBank\'s submarine cable operations, international roaming, and global NOC.</strong> Notably built SoftBank\'s first-ever international submarine cable operations framework from scratch — directly relevant operational leadership experience. Also building AI/automation tools (Python, GAS) for NOC efficiency. Strong multi-carrier relationship network (KDDI, NTT, AT&T, Orange, Telstra, etc.). <strong>Validate:</strong> SoftBank role is primarily carrier/operator ops — confirm comfort with vendor-side delivery scope at Ciena before progressing. Japanese-language profile; English proficiency to be validated in first call.'
   },
@@ -1485,7 +1489,7 @@ const PROFS = [
     l:'Tokyo, Japan',
     m:'High',
     av:'TK', avc:'#0D1B2A',
-    url:'https://www.linkedin.com/in/takahiro-kashima-5b4b284a/?jobid=1234',
+    url:'https://www.linkedin.com/in/takahirokashima-5b4b284a',
     tags:['Director Level','Submarine BD','NEC SND','Latin America Exp.','Strategy'],
     why:'<strong>Director of Business Development at NEC\'s Submarine Network Division with 9 total years at NEC including international sales (Peru/Latin America) and marketing/BD roles.</strong> Speaks Japanese, English (full professional), and Spanish — rare trilingual combination in this market. Trilingual profile and international BD experience suggests external-market orientation and potentially higher openness to external opportunities than pure technical staff. <strong>This role is more BD/commercial than ops delivery</strong> — validate whether he has direct program delivery or construction oversight experience before shortlisting for ops leadership.'
   },
@@ -1496,7 +1500,7 @@ const PROFS = [
     l:'Tokyo, Japan',
     m:'Medium',
     av:'UG', avc:'#B05E00',
-    url:'https://www.linkedin.com/in/gyuuhi/?jobid=1234',
+    url:'https://www.linkedin.com/in/gyuuhi',
     tags:['Trilingual JA/EN/CN','Service Delivery','Carrier-grade','Sub. Interconnect','DC Ops'],
     why:'<strong>Trilingual (Japanese/English/Chinese) service delivery manager with 6 years at China Unicom Japan managing end-to-end carrier-grade international leased line delivery.</strong> Deep familiarity with Japan\'s telecom ecosystem and international POP/CLS interconnect coordination. Has coordinated with NTT, KDDI, SoftBank, Colt, AT&T, Orange, Telstra, and more. Technical background in 100G transport systems (Fujitsu, 7 years). <strong>Gap vs role:</strong> Submarine cable is a specialisation area rather than primary focus — his expertise is carrier-side service delivery and terrestrial/DC interconnect. Strong pipeline candidate; <strong>may be better suited for a delivery or program management role within a submarine project rather than the top operational leadership position.</strong> Recently moved to Colt (Aug 2025) so early in new role.'
   },
@@ -1507,7 +1511,7 @@ const PROFS = [
     l:'Tokyo, Japan',
     m:'Medium',
     av:'IO', avc:'#2E4057',
-    url:'https://www.linkedin.com/in/ihsen-ouedraogo-5ab89a1b5/?jobid=1234',
+    url:'https://www.linkedin.com/in/ihsenouedraogo-5ab89a1b5',
     tags:['Ph.D.','Sub. Cable Monitoring','NEC SND R&D','AWS Certified','JLPT N1'],
     why:'<strong>PhD researcher in submarine cable monitoring technology at NEC\'s Core Technology Group (SND).</strong> Has 8+ years of submarine cable research and consulting at Mitsubishi Research Institute and FMMC before joining NEC in 2024. JLPT N1 (native-level Japanese). AWS Certified. Strong technical depth in submarine cable systems, spectrum policy, and network routing optimisation. <strong>Important gap:</strong> Role is R&D and technology development, not ops delivery or commercial leadership. Not a match for Regional Op. Leader. However, excellent long-term pipeline candidate (3–5 year horizon) as he moves from research into operational roles. <strong>Recommend: tag as future pipeline, not immediate outreach.</strong>'
   },
